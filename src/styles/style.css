@@ -160,7 +160,6 @@ nav {
     background-color: #0056b3;
 }
 
-
 /* Hero Section */
 .hero {
     background-color: white;
@@ -203,51 +202,43 @@ nav {
     color: #555;
 }
 
-/* Hero Search Box */
-.hero-search-single {
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
     margin-top: 30px;
-    display: flex;
-    align-items: stretch;
-    background-color: white;
-    border-radius: 1px solid #b6b6b6;    
-    border-radius: 5px;
-    max-width: 700px;
-    padding: 0;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
-.hero-search-single input.hero-search-job {
-    border: none;
-    padding: 0 15px;
-    flex: 1;
-    font-size: 1rem;
-    outline: none;
+.hero-buttons a {
     display: flex;
-    align-items: center;
-    height: 48px;
-    box-sizing: border-box;
-}
-
-.hero-search-single input.hero-search-job::placeholder {
-    color: #888;
-    opacity: 1;
-}
-
-.hero-search-single .hero-search-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0 30px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 0;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    height: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.hero-search-single .hero-search-btn:hover {
+.hero-buttons .post-job-btn {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.hero-buttons .post-job-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.hero-buttons .apply-job-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.hero-buttons .apply-job-btn:hover {
     background-color: #0056b3;
 }
 
@@ -300,7 +291,7 @@ nav {
 /* Popular Categories Section */
 .popular-categories {
     padding: 50px 0;
-    background-color: white; /* changed */
+    background-color: white;
 }
 
 .popular-categories .container {
@@ -324,7 +315,7 @@ nav {
 }
 
 .category-card {
-    background-color: white; /* changed */
+    background-color: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -382,4 +373,3 @@ nav {
     color: #555;
     text-align: left;
 }
-

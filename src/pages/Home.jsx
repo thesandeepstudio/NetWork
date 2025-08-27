@@ -1,9 +1,9 @@
 // src/pages/Home.jsx
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/style.css";
 
 const Home = () => {
-  // Controlled category select
   const [category, setCategory] = useState("");
 
   // Count-up animation for stats
@@ -16,9 +16,7 @@ const Home = () => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       element.textContent = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
+      if (progress < 1) window.requestAnimationFrame(step);
     };
 
     window.requestAnimationFrame(step);
@@ -26,7 +24,7 @@ const Home = () => {
 
   const loadStats = async () => {
     try {
-      const response = await fetch("/stats"); // Replace with actual API if available
+      const response = await fetch("/stats");
       const stats = await response.json();
 
       animateValue("jobs-count", 0, stats.jobs || 0, 1000);
@@ -52,15 +50,26 @@ const Home = () => {
           <div className="logo">NetWork</div>
           <nav>
             <ul className="nav-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Find Jobs</a></li>
-              <li><a href="#">Employers</a></li>
-              <li><a href="#">Candidates</a></li>
-              <li><a href="#">Pricing Place</a></li>
-              <li><a href="#">Customer Support</a></li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/under_construction">Find Jobs</Link>
+              </li>
+              <li>
+                <Link to="/under_construction">Employers</Link>
+              </li>
+              <li>
+                <Link to="/under_construction">Candidates</Link>
+              </li>
+              <li>
+                <Link to="/under_construction">Companies</Link>
+              </li>
+              <li>
+                <Link to="/under_construction">Customer Support</Link>
+              </li>
             </ul>
           </nav>
-          
         </div>
 
         <div className="sub-header">
@@ -70,10 +79,16 @@ const Home = () => {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
-              <option value="" disabled>Select a category</option>
+              <option value="" disabled>
+                Select a category
+              </option>
               <option value="web_development">Web Development</option>
-              <option value="mobile_app_development">Mobile App Development</option>
-              <option value="artificial_intelligence">Artificial Intelligence (AI)</option>
+              <option value="mobile_app_development">
+                Mobile App Development
+              </option>
+              <option value="artificial_intelligence">
+                Artificial Intelligence (AI)
+              </option>
               <option value="machine_learning">Machine Learning</option>
               <option value="data_science">Data Science</option>
               <option value="cyber_security">Cybersecurity</option>
@@ -86,19 +101,27 @@ const Home = () => {
               <option value="digital_art">Digital Art</option>
             </select>
 
-            <input type="text" placeholder="Search jobs..." className="search-box" />
+            <input
+              type="text"
+              placeholder="Search jobs..."
+              className="search-box"
+            />
 
             <div className="sub-buttons">
-              <a href="/sign_in" className="signin-btn" id="signin-btn">Sign In</a>
-              <a href="#" className="post-job-btn">Post a Job</a>
-              <a
-                href="/profile"
+              <Link to="/sign_in" className="signin-btn">
+                Sign In
+              </Link>
+              <Link to="/sign_up" className="post-job-btn">
+                Sign Up
+              </Link>
+              <Link
+                to="/profile"
                 className="profile-btn"
                 id="profile-btn"
                 style={{ display: "none" }}
               >
                 My Profile
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -114,13 +137,19 @@ const Home = () => {
               bring your ideas to life with modern tools and innovative
               approaches.
             </p>
-            <div className="hero-search-single">
-              <input
-                type="text"
-                placeholder="Job title or keyword"
-                className="hero-search-job"
-              />
-              <button className="hero-search-btn">Find a Job</button>
+            <div className="hero-buttons">
+              <Link
+                to="/under_construction"
+                className="hero-action-btn post-job-btn"
+              >
+                Post a Job
+              </Link>
+              <Link
+                to="/under_construction"
+                className="hero-action-btn apply-job-btn"
+              >
+                Apply a Job
+              </Link>
             </div>
           </div>
           <div className="hero-image">
@@ -159,15 +188,20 @@ const Home = () => {
         <div className="container">
           <h2>Popular Categories</h2>
           <div className="categories-grid">
-            {/* Category Card Example */}
             <div className="category-card">
               <div className="category-content">
                 <span className="category-icon">
-                  <img src="/assets/web-development.svg" alt="Web Development Icon" />
+                  <img
+                    src="/assets/web-development.svg"
+                    alt="Web Development Icon"
+                  />
                 </span>
                 <div className="category-text">
                   <h3>Web Development</h3>
-                  <p>Build and maintain websites and web apps using modern technologies.</p>
+                  <p>
+                    Build and maintain websites and web apps using modern
+                    technologies.
+                  </p>
                 </div>
               </div>
             </div>
@@ -175,11 +209,17 @@ const Home = () => {
             <div className="category-card">
               <div className="category-content">
                 <span className="category-icon">
-                  <img src="/assets/mobile-app-developing.svg" alt="Mobile App Development Icon" />
+                  <img
+                    src="/assets/mobile-app-developing.svg"
+                    alt="Mobile App Development Icon"
+                  />
                 </span>
                 <div className="category-text">
                   <h3>Mobile App Development</h3>
-                  <p>Create engaging mobile applications for iOS and Android platforms.</p>
+                  <p>
+                    Create engaging mobile applications for iOS and Android
+                    platforms.
+                  </p>
                 </div>
               </div>
             </div>
@@ -191,7 +231,9 @@ const Home = () => {
                 </span>
                 <div className="category-text">
                   <h3>Artificial Intelligence</h3>
-                  <p>Develop AI models and solutions to solve complex problems.</p>
+                  <p>
+                    Develop AI models and solutions to solve complex problems.
+                  </p>
                 </div>
               </div>
             </div>
@@ -199,7 +241,10 @@ const Home = () => {
             <div className="category-card">
               <div className="category-content">
                 <span className="category-icon">
-                  <img src="/assets/machine-learning.svg" alt="Machine Learning Icon" />
+                  <img
+                    src="/assets/machine-learning.svg"
+                    alt="Machine Learning Icon"
+                  />
                 </span>
                 <div className="category-text">
                   <h3>Machine Learning</h3>
@@ -215,7 +260,9 @@ const Home = () => {
                 </span>
                 <div className="category-text">
                   <h3>Data Science</h3>
-                  <p>Analyze and interpret complex data to help make decisions.</p>
+                  <p>
+                    Analyze and interpret complex data to help make decisions.
+                  </p>
                 </div>
               </div>
             </div>
@@ -223,11 +270,17 @@ const Home = () => {
             <div className="category-card">
               <div className="category-content">
                 <span className="category-icon">
-                  <img src="/assets/cybersecurity.svg" alt="Cybersecurity Icon" />
+                  <img
+                    src="/assets/cybersecurity.svg"
+                    alt="Cybersecurity Icon"
+                  />
                 </span>
                 <div className="category-text">
                   <h3>Cybersecurity</h3>
-                  <p>Protect systems and networks from digital threats and attacks.</p>
+                  <p>
+                    Protect systems and networks from digital threats and
+                    attacks.
+                  </p>
                 </div>
               </div>
             </div>
@@ -235,11 +288,17 @@ const Home = () => {
             <div className="category-card">
               <div className="category-content">
                 <span className="category-icon">
-                  <img src="/assets/cloud-computing.svg" alt="Cloud Computing Icon" />
+                  <img
+                    src="/assets/cloud-computing.svg"
+                    alt="Cloud Computing Icon"
+                  />
                 </span>
                 <div className="category-text">
                   <h3>Cloud Computing</h3>
-                  <p>Manage cloud infrastructure and deploy scalable applications.</p>
+                  <p>
+                    Manage cloud infrastructure and deploy scalable
+                    applications.
+                  </p>
                 </div>
               </div>
             </div>
