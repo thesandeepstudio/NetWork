@@ -1,0 +1,84 @@
+.profile-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* keeps Sign Out at bottom */
+}
+
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Top section: avatar + links */
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-user {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.sidebar-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.sidebar-username {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.sidebar-email {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Links directly under avatar */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: #111827;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: #f3f4f6;
+}
+
+/* Sign Out button at the bottom */
+.sidebar-signout {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  align-self: stretch;
+  margin-top: auto;
+}
+
+.sidebar-signout:hover {
+  background-color: #dc2626;
+}
