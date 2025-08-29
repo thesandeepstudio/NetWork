@@ -1,13 +1,40 @@
 import React, { useState } from "react";
 import "../styles/SignIn.css"; // Import your old CSS
+import { useNavigate } from "react-router-dom";
+
+// ============================
+// TEMP MASTER LOGIN DATA
+// Remove this after backend development
+// ============================
+const masterUser = {
+  email: "master@gmail.com",
+  password: "admin",
+  name: "Master User",
+};
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // ============================
+    // FRONTEND ONLY LOGIN (TEMP)
+    // Remove this block after backend is ready
+    // ============================
+    if (email === masterUser.email && password === masterUser.password) {
+      localStorage.setItem("currentUser", JSON.stringify(masterUser));
+      navigate("/");
+      return;
+    }
+
+    // ============================
+    // ORIGINAL BACKEND LOGIN CODE
+    // Keep this for future backend integration
+    // ============================
     const formData = { email, password };
 
     try {
@@ -60,6 +87,7 @@ const SignIn = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit" className="btn-primary">
           Sign In
         </button>

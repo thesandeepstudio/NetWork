@@ -1,8 +1,15 @@
-// src/components/Header.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = ({ category, setCategory }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user) setCurrentUser(user);
+  }, []);
+
+
   return (
     <header>
       <div className="container">
@@ -45,11 +52,20 @@ const Header = ({ category, setCategory }) => {
           <input type="text" placeholder="Search jobs..." className="search-box" />
 
           <div className="sub-buttons">
-            <Link to="/sign_in" className="signin-btn">Sign In</Link>
-            <Link to="/sign_up" className="post-job-btn">Sign Up</Link>
-            <Link to="/profile" className="profile-btn" id="profile-btn" style={{ display: "none" }}>
-              My Profile
-            </Link>
+            {!currentUser ? (
+              <>
+                <Link to="/sign_in" className="signin-btn">Sign In</Link>
+                <Link to="/sign_up" className="post-job-btn">Sign Up</Link>
+              </>
+            ) : (
+              <Link to="/profile">
+                <img
+                  src="/assets/Hacker.png"
+                  alt="Profile Avatar"
+                  style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                />
+              </Link>
+            )}
           </div>
         </div>
       </div>
