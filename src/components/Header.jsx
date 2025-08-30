@@ -19,8 +19,8 @@ const Header = ({ category, setCategory }) => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/findJob">Find Jobs</Link></li>
             <li><Link to="/candidates">Candidates</Link></li>
-            <li><Link to="/under_construction">Companies</Link></li>
-            <li><Link to="/under_construction">Customer Support</Link></li>
+            <li><Link to="/companies">Companies</Link></li>
+            <li><Link to="/customerSupport">Customer Support</Link></li>
           </ul>
         </nav>
       </div>

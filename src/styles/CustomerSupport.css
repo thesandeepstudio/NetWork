@@ -1,0 +1,76 @@
+.support-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.support-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.support-description {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.support-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.support-form input,
+.support-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.support-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #1d4ed8;
+}
+
+.faq-section {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.faq-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.faq-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #6b7280;
+}
+
+.faq-section li {
+  margin-bottom: 0.75rem;
+}
