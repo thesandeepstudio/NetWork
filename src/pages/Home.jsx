@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Stats from "../components/Stats";
 import PopularCategories from "../components/PopularCategories";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [category, setCategory] = useState("");
@@ -32,6 +33,7 @@ const Home = () => {
       <Hero />
       <Stats stats={stats} />
       <PopularCategories />
+      <Footer />
     </div>
   );
 };
