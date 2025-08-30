@@ -16,7 +16,7 @@ const Hero = () => {
             <Link to="/under_construction" className="hero-action-btn post-job-btn">
               Post a Job
             </Link>
-            <Link to="/under_construction" className="hero-action-btn apply-job-btn">
+            <Link to="/findjob" className="hero-action-btn apply-job-btn">
               Apply a Job
             </Link>
           </div>

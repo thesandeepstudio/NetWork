@@ -5,6 +5,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Footer from "./components/Footer";
 import ProfilePage from "./pages/ProfilePage";
+import FindJob from "./pages/FindJob";
+import Candidates from "./pages/Candidates";
 import UnderConstruction from "./pages/UnderConstruction";
 
 const App = () => {
@@ -16,6 +18,9 @@ const App = () => {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/FindJob" element={<FindJob />} />
+        <Route path="/candidates" element={<Candidates />} />
+
         <Route
           path="/under_construction"
           element={<UnderConstruction />}

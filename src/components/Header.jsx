@@ -17,9 +17,8 @@ const Header = ({ category, setCategory }) => {
         <nav>
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/under_construction">Find Jobs</Link></li>
-            <li><Link to="/under_construction">Employers</Link></li>
-            <li><Link to="/under_construction">Candidates</Link></li>
+            <li><Link to="/findJob">Find Jobs</Link></li>
+            <li><Link to="/candidates">Candidates</Link></li>
             <li><Link to="/under_construction">Companies</Link></li>
             <li><Link to="/under_construction">Customer Support</Link></li>
           </ul>
