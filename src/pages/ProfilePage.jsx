@@ -74,6 +74,17 @@ const ProfilePage = () => {
     );
   }
 
+  const handleDeleteAccount = () => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete your account? This action cannot be undone."
+    );
+    if (confirmDelete) {
+      localStorage.removeItem("currentUser"); // remove user data
+      alert("Your account has been deleted.");
+      navigate("/sign_in"); // redirect to sign-in page
+    }
+  };
+
   return (
     <div className="profile-page-container flex">
       {/* Sidebar */}
@@ -172,17 +183,31 @@ const ProfilePage = () => {
             </label>
 
             {/* Buttons */}
-            <div className="profile-form-buttons">
-              <button type="submit" className="save-btn">
-                Save Changes
-              </button>
-              <button
-                type="button"
-                className="cancel-btn"
-                onClick={handleCancel}
-              >
-                Cancel
-              </button>
+            <div className="profile-form-buttons-wrapper">
+              {/* Delete button on the left */}
+              <div className="delete-button-container">
+                <button
+                  type="button"
+                  className="delete-btn"
+                  onClick={handleDeleteAccount}
+                >
+                  Delete Account
+                </button>
+              </div>
+
+              {/* Save & Cancel on the right */}
+              <div className="save-cancel-container">
+                <button type="submit" className="save-btn">
+                  Save Changes
+                </button>
+                <button
+                  type="button"
+                  className="cancel-btn"
+                  onClick={handleCancel}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           </form>
         </div>

@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-subtitle">Candidate</h3>
           <ul className="footer-links">
-            <li><Link to="/find_job">Browse Job</Link></li>
+            <li><Link to="/findjob">Browse Job</Link></li>
             <li><Link to="/candidates">Browse Employers</Link></li>
             <li><Link to="/profile">Candidate Dashboard</Link></li>
             <li><Link to="/under_construction">Saved Jobs</Link></li>

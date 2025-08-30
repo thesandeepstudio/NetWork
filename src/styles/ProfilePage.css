@@ -64,15 +64,16 @@
   background-color: #1d4ed8;
 }
 
-.cancel-btn {
-  background-color: #e5e7eb; /* light gray */
-  color: #111827;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.profile-form-buttons-wrapper {
+  display: flex;
+  justify-content: space-between; /* left & right alignment */
+  align-items: center;
+  margin-top: 1rem;
 }
 
-.cancel-btn:hover {
-  background-color: #d1d5db;
+
+
+.save-cancel-container {
+  display: flex;
+  gap: 0.5rem; /* space between Save and Cancel */
 }

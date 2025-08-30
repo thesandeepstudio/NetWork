@@ -18,6 +18,7 @@ const Companies = () => {
     { id: 6, name: "NeuroTech", location: "Tokyo", industry: "AI", openings: 4 },
   ]);
 
+
   const filteredCompanies = companies.filter(
     (c) =>
       c.name.toLowerCase().includes(searchTerm.toLowerCase()) &&

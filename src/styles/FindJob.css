@@ -8,7 +8,7 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  text-align: center;
+  text-align: left;
   color: #111827;
 }
 
@@ -17,7 +17,8 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
-  justify-content: center;
+  justify-content: lef;
+  align-items: center;
 }
 
 .filters input,
@@ -27,11 +28,14 @@
   border-radius: 8px;
   font-size: 1rem;
   min-width: 200px;
+  flex: 1 1 200px; /* allows responsive resizing */
+  margin: 0.5rem auto; /* horizontally center each element with top/bottom spacing */
+  box-sizing: border-box; /* includes padding and border in width */
 }
 
 .job-listings {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
@@ -40,7 +44,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
 }
 
@@ -62,9 +66,9 @@
 /* Wrapper for type + button */
 .job-footer {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
-  gap: 0.75rem;           /* spacing between type and button */
+  gap: 0.75rem; /* spacing between type and button */
   margin-top: 0.5rem;
 }
 
@@ -98,4 +102,19 @@
   text-align: center;
   font-size: 1rem;
   color: #6b7280;
+}
+
+.delete-btn {
+  background: #dc2626; /* red */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
 }
