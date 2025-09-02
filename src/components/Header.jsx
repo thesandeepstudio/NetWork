@@ -9,18 +9,29 @@ const Header = ({ category, setCategory }) => {
     if (user) setCurrentUser(user);
   }, []);
 
-
   return (
     <header>
       <div className="container">
-        <div className="logo">NetWork</div>
+        <div className="logo">
+          <Link to="/">NetWork</Link>
+        </div>
         <nav>
           <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/findJob">Find Jobs</Link></li>
-            <li><Link to="/candidates">Candidates</Link></li>
-            <li><Link to="/companies">Companies</Link></li>
-            <li><Link to="/customerSupport">Customer Support</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/findJob">Find Jobs</Link>
+            </li>
+            <li>
+              <Link to="/candidates">Candidates</Link>
+            </li>
+            <li>
+              <Link to="/companies">Companies</Link>
+            </li>
+            <li>
+              <Link to="/customerSupport">Customer Support</Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -32,10 +43,16 @@ const Header = ({ category, setCategory }) => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="" disabled>Select a category</option>
+            <option value="" disabled>
+              Select a category
+            </option>
             <option value="web_development">Web Development</option>
-            <option value="mobile_app_development">Mobile App Development</option>
-            <option value="artificial_intelligence">Artificial Intelligence (AI)</option>
+            <option value="mobile_app_development">
+              Mobile App Development
+            </option>
+            <option value="artificial_intelligence">
+              Artificial Intelligence (AI)
+            </option>
             <option value="machine_learning">Machine Learning</option>
             <option value="data_science">Data Science</option>
             <option value="cyber_security">Cybersecurity</option>
@@ -48,13 +65,21 @@ const Header = ({ category, setCategory }) => {
             <option value="digital_art">Digital Art</option>
           </select>
 
-          <input type="text" placeholder="Search jobs..." className="search-box" />
+          <input
+            type="text"
+            placeholder="Search jobs..."
+            className="search-box"
+          />
 
           <div className="sub-buttons">
             {!currentUser ? (
               <>
-                <Link to="/sign_in" className="signin-btn">Sign In</Link>
-                <Link to="/sign_up" className="post-job-btn">Sign Up</Link>
+                <Link to="/sign_in" className="signin-btn">
+                  Sign In
+                </Link>
+                <Link to="/sign_up" className="post-job-btn">
+                  Sign Up
+                </Link>
               </>
             ) : (
               <Link to="/profile">
