@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import NavBar from "../components/Layout/navBar/navBar";
+import SubHeader from "../components/Layout/SubHeader/SubHeader";
+import Footer from "../components/Layout/Footer/Footer";
 import "../styles/Companies.css";
 
 const Companies = () => {
@@ -10,20 +11,57 @@ const Companies = () => {
 
   // Example company data
   const [companies] = useState([
-    { id: 1, name: "TechCorp", location: "Kathmandu", industry: "Software", openings: 12 },
-    { id: 2, name: "DesignHub", location: "Pokhara", industry: "Design", openings: 5 },
-    { id: 3, name: "DataSolve", location: "Lalitpur", industry: "Data Science", openings: 8 },
-    { id: 4, name: "Appify", location: "Kathmandu", industry: "Mobile Apps", openings: 3 },
-    { id: 5, name: "WebWorks", location: "Bhaktapur", industry: "Web Development", openings: 7 },
-    { id: 6, name: "NeuroTech", location: "Tokyo", industry: "AI", openings: 4 },
+    {
+      id: 1,
+      name: "TechCorp",
+      location: "Kathmandu",
+      industry: "Software",
+      openings: 12,
+    },
+    {
+      id: 2,
+      name: "DesignHub",
+      location: "Pokhara",
+      industry: "Design",
+      openings: 5,
+    },
+    {
+      id: 3,
+      name: "DataSolve",
+      location: "Lalitpur",
+      industry: "Data Science",
+      openings: 8,
+    },
+    {
+      id: 4,
+      name: "Appify",
+      location: "Kathmandu",
+      industry: "Mobile Apps",
+      openings: 3,
+    },
+    {
+      id: 5,
+      name: "WebWorks",
+      location: "Bhaktapur",
+      industry: "Web Development",
+      openings: 7,
+    },
+    {
+      id: 6,
+      name: "NeuroTech",
+      location: "Tokyo",
+      industry: "AI",
+      openings: 4,
+    },
   ]);
-
 
   const filteredCompanies = companies.filter(
     (c) =>
       c.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       c.location.toLowerCase().includes(location.toLowerCase()) &&
-      (industry ? c.industry.toLowerCase().includes(industry.toLowerCase()) : true)
+      (industry
+        ? c.industry.toLowerCase().includes(industry.toLowerCase())
+        : true)
   );
 
   return (
@@ -74,7 +112,9 @@ const Companies = () => {
               </div>
             ))
           ) : (
-            <p className="no-results">No companies found. Try adjusting your search.</p>
+            <p className="no-results">
+              No companies found. Try adjusting your search.
+            </p>
           )}
         </div>
       </div>

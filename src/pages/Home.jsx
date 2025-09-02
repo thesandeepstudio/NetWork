@@ -1,14 +1,12 @@
 // src/pages/Home.jsx
 import React, { useEffect, useState } from "react";
 import "../styles/style.css";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Stats from "../components/Stats";
 import PopularCategories from "../components/PopularCategories";
-import Footer from "../components/Footer";
 
 const Home = () => {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(""); // selected category
   const [stats, setStats] = useState(null);
 
   const loadStats = async () => {
@@ -29,11 +27,9 @@ const Home = () => {
 
   return (
     <div>
-      <Header category={category} setCategory={setCategory} />
       <Hero />
       <Stats stats={stats} />
-      <PopularCategories />
-      <Footer />
+      <PopularCategories category={category} setCategory={setCategory} />
     </div>
   );
 };

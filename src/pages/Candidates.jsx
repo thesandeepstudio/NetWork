@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import NavBar from "../components/Layout/navBar/navBar";
+import SubHeader from "../components/Layout/SubHeader/SubHeader";
+import Footer from "../components/Layout/Footer/Footer";
 import "../styles/Candidates.css";
 
 const Candidates = () => {
@@ -103,31 +104,32 @@ const Candidates = () => {
 
         {/* Candidate Listings */}
         <div className="candidate-listings">
-  {filteredCandidates.length > 0 ? (
-    filteredCandidates.map((c) => (
-      <div key={c.id} className="candidate-card">
-        {/* Avatar */}
-        <div className="avatar-wrapper">
-          <img
-            src={`https://i.pravatar.cc/150?img=${c.id}`} // example random avatar
-            alt={c.name}
-            className="avatar"
-          />
+          {filteredCandidates.length > 0 ? (
+            filteredCandidates.map((c) => (
+              <div key={c.id} className="candidate-card">
+                {/* Avatar */}
+                <div className="avatar-wrapper">
+                  <img
+                    src={`https://i.pravatar.cc/150?img=${c.id}`} // example random avatar
+                    alt={c.name}
+                    className="avatar"
+                  />
+                </div>
+
+                <h2>{c.name}</h2>
+                <p className="title">{c.title}</p>
+                <p className="skills">{c.skills}</p>
+                <p className="location">{c.location}</p>
+                <p className="experience">{c.experience} experience</p>
+                <button className="view-profile-btn">View Profile</button>
+              </div>
+            ))
+          ) : (
+            <p className="no-results">
+              No candidates found. Try adjusting your search.
+            </p>
+          )}
         </div>
-
-        <h2>{c.name}</h2>
-        <p className="title">{c.title}</p>
-        <p className="skills">{c.skills}</p>
-        <p className="location">{c.location}</p>
-        <p className="experience">{c.experience} experience</p>
-        <button className="view-profile-btn">View Profile</button>
-      </div>
-    ))
-  ) : (
-    <p className="no-results">No candidates found. Try adjusting your search.</p>
-  )}
-</div>
-
       </div>
       <Footer />
     </>

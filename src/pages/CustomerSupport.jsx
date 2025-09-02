@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import NavBar from "../components/Layout/navBar/navBar";
+import SubHeader from "../components/Layout/SubHeader/SubHeader";
+import Footer from "../components/Layout/Footer/Footer";
 import "../styles/CustomerSupport.css";
 
 const CustomerSupport = () => {
@@ -25,7 +26,8 @@ const CustomerSupport = () => {
       <div className="support-page">
         <h1 className="support-title">Customer Support</h1>
         <p className="support-description">
-          Need help? Fill out the form below and our support team will get back to you shortly.
+          Need help? Fill out the form below and our support team will get back
+          to you shortly.
         </p>
 
         <form className="support-form" onSubmit={handleSubmit}>
@@ -56,7 +58,9 @@ const CustomerSupport = () => {
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
-          <button type="submit" className="submit-btn">Send Message</button>
+          <button type="submit" className="submit-btn">
+            Send Message
+          </button>
         </form>
 
         <div className="faq-section">
